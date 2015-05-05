@@ -49,6 +49,7 @@ public function index(){
     $data['message']            =   "";
     $data['bodytitle']          =   "Absence List <small>4 Continuous Absence </small>";
     $data['breadcrumbtitle']    =   "Dashboard > 4 Continuous Absence";
+    //$data['faicon']           =   "fa-dashboard"; 
     $data['faicon']             =   "fa-dashboard"; 
     
     // alert count part
@@ -330,7 +331,7 @@ public function index(){
     
        
 } // end of index
-   
+ /* Latest done*/  
 }  
   
 ?>
