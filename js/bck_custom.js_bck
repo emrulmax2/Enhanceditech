@@ -1,0 +1,365 @@
+function recallRemove(){
+
+     $(".doitonlineview").click(function(event){
+       
+      var Id=$(this).closest('tr').find("td.dID").html();
+      //alert(Id);
+      //event.preventDefault(); //var loadimg=$("#doitOnline .loading_valid");
+                                      
+                             
+                                        pathArray = window.location.href.split( '/' );
+                                        
+                                        protocol = pathArray[0];
+                                        host = pathArray[2];
+                                        box = pathArray[3];
+                                        url = protocol + '//' + host+'/'+box+'/index.php/viewdoitonlineajax/';
+                                         //  alert(url);
+                                        //$("#changePass .loading_valid").fadeIn("fast");
+                                        
+                                        $("#doitOnline .loading_valid2").fadeIn("fast");
+                                        var serverPage=url;
+                                    
+                                        var sP=serverPage;
+                                        $.post(sP, {id: Id},
+                                  function(msg){ $("#getadminscheduleview").html(msg); $("#doitOnline .loading_valid2").fadeOut("fast");} );
+                                   
+   
+       
+   });
+
+}
+
+
+$(function() {
+
+    
+    $('.date').datepicker({ dateFormat: "dd-mm-yy" });
+    
+// datatable
+    $('.dTable').dataTable({
+        "bJQueryUI": true,
+        "sPaginationType": "full_numbers",
+        "sDom": '<""l>t<"F"fp>',
+          "sScrollX": "100%",
+          "sScrollXInner": "110%",
+          "iDisplayLength": 10,
+          "aLengthMenu": [[10, 25, 50,100,-1], [10, 25, 50,100,"All"]],
+          "fnDrawCallback":function(){
+            recallRemove();
+          },     
+          
+         /* "fnInitComplete": function() {
+                 $(".doitonlineview").click(function(event){
+            var Id=$(this).closest('tr').children("td:first").html();
+            alert(Id);              
+                 });
+          },         */
+          "bScrollCollapse": true
+    });    
+    
+    $("#course").change(function(){
+
+                                      var courseid=$(this).val();
+                                      var sessionid=$("#session").val();
+                                  
+                                    if(courseid!="")
+                                    {
+                                        pathArray = window.location.href.split( '/' );
+                                        
+                                        protocol = pathArray[0];
+                                        host = pathArray[2];
+                                        box = pathArray[3];
+                                        url = protocol + '//' + host+'/'+box+'/index.php/moduleajax/';
+                                        
+                                        $(".loading_valid").fadeIn("fast");
+                                        var serverPage=url;
+                                    
+                                        var sP=serverPage;
+                                        $.post(sP, {course: courseid, sessiondata: sessionid},
+                                  function(msg){ $("#module").html(msg); $(".loading_valid").fadeOut();} );
+                                    }
+                                    
+                                      
+                                  });    
+//PAPER ID SEARCH SUBMITION AJAX CALLING
+    $("#papaersearch").click(function(){
+
+                                      var paperid=$("#paperid").val();  
+                                  
+                                    if(paperid!="")
+                                    {
+                                        pathArray = window.location.href.split( '/' );
+                                        
+                                        protocol = pathArray[0];
+                                        host = pathArray[2];
+                                        box = pathArray[3];
+                                        url = protocol + '//' + host+'/'+box+'/index.php/resultajax/';
+                                             //alert(url);
+                                        $(".loading_valid").fadeIn("fast");
+                                        var serverPage=url;
+                                    
+                                        var sP=serverPage;
+                                        //alert(paperid);
+                                        $.post(sP, {paperid: paperid },
+                                  function(msg){ $("#resultdata").html(msg); $(".loading_valid").fadeOut();} );
+                                    
+                                    
+                                    }else{
+											
+											$("#resultdata").html("<div class='alert alert-danger col-lg-6 col-md-6 col-sm-12 col-xs-12'>Not found . Please check your Paper ID or Contact College Academic team.</div><div class='clearfix'></div>");	
+										
+                                    }
+                                    
+                                      
+                                  });
+
+//==========================================================
+//IV REVIEW PAPER ID SEARCH SUBMITION AJAX CALLING
+
+    $("#ivsearch").click(function(){
+
+                                      var paperid=$("#paperid").val();  
+                                      var studentid=$("#studentid").val();  
+                                  
+                                    if(paperid!="")
+                                    {
+                                        pathArray = window.location.href.split( '/' );
+                                        
+                                        protocol = pathArray[0];
+                                        host = pathArray[2];
+                                        box = pathArray[3];
+                                        url = protocol + '//' + host+'/'+box+'/index.php/feedbackajax/';
+                                             //alert(url);
+                                        $(".loading_valid").fadeIn("fast");
+                                        var serverPage=url;
+                                    
+                                        var sP=serverPage;
+                                        //alert(paperid);
+                                        $.post(sP, {paperid: paperid, studentid: studentid },
+                                  function(msg){ $("#resultdata").html(msg); $(".loading_valid").fadeOut();} );
+                                    
+                                    
+                                    }else{
+											
+											$("#resultdata").html("<div class='alert alert-danger col-lg-6 col-md-6 col-sm-12 col-xs-12'>Not found . Please check your Paper ID or Contact College Academic team.</div><div class='clearfix'></div>");	
+										
+                                    }
+                                    
+                                      
+                                  });
+
+//===========================================================
+    $("#module").change(function(){
+
+                                      var module=$(this).val();
+                                  
+                                    if(module!="")
+                                    {
+                                        pathArray = window.location.href.split( '/' );
+                                        
+                                        protocol = pathArray[0];
+                                        host = pathArray[2];
+                                        box = pathArray[3];
+                                        url = protocol + '//' + host+'/'+box+'/index.php/groupajax/';
+                                        
+                                        $(".loading_valid2").fadeIn("fast");
+                                        var serverPage=url;
+                                    
+                                        var sP=serverPage;
+                                        $.post(sP, {moduleid: module},
+                                  function(msg){ $("#group").html(msg); $(".loading_valid2").fadeOut();} );
+                                    }
+                                    
+                                      
+                                  });
+
+
+    $("#changePass").submit(function(event){
+event.preventDefault();               
+                                      var loadimg=$(".loading_valid");
+                                      var sid=$("#sid").val();
+                                      var label=$("#lebel").val();
+                                      var oldPassword=$("#oldPassword").val();
+                                      var NewPassword=$("#NewPassword").val();
+                                      var ReNewPassword=$("#ReNewPassword").val();
+                                  
+                                    if(NewPassword==ReNewPassword && oldPassword!=NewPassword)
+                                    {
+                                        pathArray = window.location.href.split( '/' );
+                                        
+                                        protocol = pathArray[0];
+                                        host = pathArray[2];
+                                        box = pathArray[3];
+                                        url = protocol + '//' + host+'/'+box+'/index.php/changepasswordajax/';
+                                        
+                                        //$("#changePass .loading_valid").fadeIn("fast");
+                                        $(this).find(".loading_valid").fadeIn("fast");
+                                        var serverPage=url;
+                                    
+                                        var sP=serverPage;
+                                        $.post(sP, {sid: sid,label: label, oldpassword: oldPassword ,newpassword: NewPassword ,renewpass: ReNewPassword},
+                                  function(msg){ $(".msg").html(msg); $("#changePass .loading_valid").fadeOut("fast");} );
+                                    }else if(oldPassword!=NewPassword){
+                                        $(".msg").html("<div class='alert  alert-danger '><p><span class='glyphicon  glyphicon-remove'></span> Password didn't match</p></div>");
+                                    }else{
+                                       $(".msg").html("<div class='alert alert-danger '><p><span class='glyphicon  glyphicon-remove'></span> Old password and new password can not be same.</p></div>");  
+                                    }
+                                    
+                                      
+                                  });   
+                                  
+$("#doitOnline").submit(function(event){
+event.preventDefault(); var loadimg=$(".loading_valid");
+                                      var Id=$(".idnumbertext").val();
+                                      var actionstatus=$("#actionstatus").val();
+                                      var remarks=$("#remarksid").val();
+                                    
+                                    if(remarks)
+                                    {
+                                        pathArray = window.location.href.split( '/' );
+                                        
+                                        protocol = pathArray[0];
+                                        host = pathArray[2];
+                                        box = pathArray[3];
+                                        url = protocol + '//' + host+'/'+box+'/index.php/changedoitstatusajax/';
+                                        
+                                        //$("#changePass .loading_valid").fadeIn("fast");
+                                        $(this).find(".loading_valid").fadeIn("fast");
+                                        var serverPage=url;
+                                    
+                                        var sP=serverPage;
+                                        $.post(sP, {id: Id,status:actionstatus,remarks:remarks},
+                                  function(msg){ $(".msg").html(msg); $("#doitOnline .loading_valid").fadeOut("fast");} );
+                                    }else{
+                                       $(".msg").html("<div class='alert alert-danger '><p><span class='glyphicon  glyphicon-remove'></span>Status action can not be taken. </p></div>");  
+                                    }
+                                    
+                                      
+                                  });
+
+  /* $(".doitonlineview").click(function(event){
+       
+      var Id=$(this).closest('tr').children("td:first").html();
+      //alert(Id);
+      //event.preventDefault(); //var loadimg=$("#doitOnline .loading_valid");
+                                      
+                             
+                                        pathArray = window.location.href.split( '/' );
+                                        
+                                        protocol = pathArray[0];
+                                        host = pathArray[2];
+                                        box = pathArray[3];
+                                        url = protocol + '//' + host+'/'+box+'/index.php/viewdoitonlineajax/';
+                                         //  alert(url);
+                                        //$("#changePass .loading_valid").fadeIn("fast");
+                                        
+                                        $("#doitOnline .loading_valid2").fadeIn("fast");
+                                        var serverPage=url;
+                                    
+                                        var sP=serverPage;
+                                        $.post(sP, {id: Id},
+                                  function(msg){ $("#getadminscheduleview").html(msg); $("#doitOnline .loading_valid2").fadeOut("fast");} );
+                                   
+   
+       
+   });  */
+
+    $('.timeinput').timepicker({
+    showSecond: true,
+        timeFormat: 'hh:mm:ss',
+        stepHour: 1,
+        stepMinute: 1,
+        stepSecond: 15
+
+    });
+    
+    $('.subject-area-data').find('.glyphicon').css({"display":"none"});
+    $('.subject-area-content').slideToggle();
+    $('.subject-area-data').find('.glyphicon-plus-sign').show();
+    
+    $('.subject-header').click(function(){
+        
+          $(this).closest('.subject-area-data').find('.subject-area-content').slideToggle(function() {
+            if($(this).is(":hidden")) {
+                $(this).closest('.subject-area-data').find('.glyphicon-plus-sign').show();
+                $(this).closest('.subject-area-data').find('.glyphicon-minus-sign').hide();
+            }else{
+                $(this).closest('.subject-area-data').find('.glyphicon-plus-sign').hide();
+                $(this).closest('.subject-area-data').find('.glyphicon-minus-sign').show();                
+            }
+          });
+          
+    });
+    
+//CHECK ATTANDACE EXCUSE DATE SELECTION    
+    $("#attandance").submit(function(event){
+    // event.preventDefault(); var loadimg=$(".loading_valid"); 
+         //alert("error"); 
+         
+    var data1='<div class="alert alert-danger"><p><span class="glyphicon glyphicon-remove"></span>Please ';
+    var data2='';
+    var data3='</p></div>';     
+         
+       $.each($('label').find('.moduledate'), function(){
+                 var $this = $(this);
+                 
+          if(!$('.moduledate').is(":checked")){
+              data2=' select a date from course module';
+             $(".alermsg").html(data1+data2+data3);
+             $(".alert").fadeOut(5000);
+           //alert('Ok');  
+             event.preventDefault();
+             return false;
+          }
+           else{
+              return true; 
+           }
+                
+       }); 
+       
+    //return false;  
+    });
+    
+//FILE UPLOAD PART START
+    
+// Change this to the location of your server-side upload handler:
+  //  var url = window.location.hostname === 'blueimp.github.io' ?  '//jquery-file-upload.appspot.com/' : 'server/php/';
+        // alert(url);   
+     'use strict';    
+     var uid=$("#suid").val();
+    // alert(uid);
+     pathArray = window.location.href.split( '/' );
+                                        
+                                        protocol = pathArray[0];
+                                        host = pathArray[2];
+                                        box = pathArray[3];
+                                     var   url = protocol + '//' + host+'/'+box+'/uploads/';
+                                     //var   url = 'uploads/';
+                                                    
+        // alert(url);        
+    $('#fileupload').fileupload({
+        url: url,
+        dataType: 'json',
+        done: function (e, data) {
+            $.each(data.result.files, function (index, file) {
+                $('<p/>').text(file.name).appendTo('#files');
+                $('<input type="hidden" name="namefiles[]" value="'+file.name+'" />').appendTo('#files');
+                
+            });
+        },
+        progressall: function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $('#progress .progress-bar').css(
+                'width',
+                progress + '%'
+            );
+        }
+    }).prop('disabled', !$.support.fileInput)
+        .parent().addClass($.support.fileInput ? undefined : 'disabled');
+//FILE UPLOAD PART END            
+    
+});
+
+
+
+

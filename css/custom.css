@@ -1,0 +1,431 @@
+/*
+* xs - 767px
+* sm - 991px
+* md - 1199px
+* lg - 1200px
+* @media (max-width: 767px) {
+* @media (min-width: 768px) and (max-width: 991px) {
+* @media (min-width: 992px) and (max-width: 1199px) {
+* @media (min-width: 1200px) {
+* @media only screen and (min-device-width: 320px) and (max-device-width: 480px)
+*/
+label { font-weight: normal;}
+.no-pad-sm-right{ padding-right:0px; } 	
+.no-pad-sm{ padding-left:0px; padding-right:0px; } 	
+.no-pad-sm-left{ padding-left:0px; } 
+.no-pad-left{ padding-left:0px; }
+
+.no-pad-right{ padding-right:0px; }    
+
+.no-pad{ padding-left:0px; padding-right:0px; }
+
+.pad-right-5{ padding-right:5%; }
+
+.pad-left-5{ padding-left:5%; }
+
+.margin-height{ margin: 2% auto; }
+
+.margin-bottom-2{ margin-bottom: 2%; }
+.margin-top-2{ margin-top: 2%; }
+
+.margin-bottom-5{ margin-bottom: 5%; }
+.margin-top-5{ margin-top: 5%; }
+
+.margin-left-5{ margin-left: 5%; }
+
+.margin-right-5{ margin-right: 5%; }
+
+table.display td.gradeBtd a.btn-sm {
+    padding: 5px 8px !important;
+}
+
+.red-link {
+    color: #a94442;
+}
+.red { background:#f75a57; color:#fff;}
+tr.not-reviewd >td { font-weight: bold;}
+tr.reviewd >td { font-weight: normal;}
+.address-details, .qualification-details, .employment-info, .disabilities-info, .agent-claim, .reffered-claim, .stafflist { display: none;}
+#fundingoption2, #fundingoption, #fundingoption3 { display: none;}
+
+.img-left { float:left; min-width:50px; max-width: 130px; padding-left: 15px; padding-right: 15px;}
+.company-info { float:left; min-width:230px; padding-left: 15px; padding-right: 15px;}
+.img-left img {min-width:50px; max-width: 100px; margin-top:20px;}
+a.logo { line-height: 28px; opacity:0.5}
+a.logo:hover { opacity:1}
+.top-logo {  float:left; margin-right: 10px; }
+.loading { display: none;}
+#emulated { overflow: hidden; height: 100%; min-height: 600px;}
+.side-nav i{
+	font-size:200%;
+}
+.side-nav { font-size: 12px;}
+a.logo:hover > .top-logo { background-position: 0 32px;}
+.navbar-inverse .navbar-nav > li > a {
+    color: #cacaca;
+}
+.page-header {
+
+    margin: 0px 0 20px;
+
+}
+.narr {
+    font-size: 10px;
+    font-style: italic;
+    color: #666;
+}
+#table1 .label {
+    color: #212121;
+}
+#table1 td {
+    padding-bottom: 5px;
+}
+.lebel-close {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    font-size: 15px;
+    font-weight: bold;
+    left: 5px;
+    position: relative;
+    top: 2px;
+}
+.btn-dark {
+    background: none repeat scroll 0 0 #454545;
+    color: #fff;
+}
+.btn-dark:hover {
+        background: none repeat scroll 0 0 #000;
+    color: #fff;
+}
+.dark {
+    color: #454545;
+    
+}
+.dark:hover {
+        color: #000;
+}
+.no-bottom > td  { border-top: none !important; }
+
+tfoot tr { border-bottom: 2px solid #999; }
+
+
+
+
+.divider {
+    background-color: #e5e5e5;
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+}
+.checkbox-margin-right label{
+ margin-right: 10%;	
+}
+.margin-top-bottom-o{
+    margin-bottom: 0px;
+    margin-top: 10px !important;
+}
+.mce-panel { border-color: #dfdfdf !important; border-radius: 5px;}
+.search-student-list tbody tr{ cursor: pointer; }
+.registration-student-list tbody tr, .student-management-list tbody tr{ cursor: pointer; }
+.help-inline{
+    background-color: #FFA8A8; display:block; padding:2%; color:#404040; text-align:right;
+}
+.nav-pills-sm > li > a {
+    display: block;
+    padding: 5px 7px;
+    position: relative;
+    font-size: 107%;
+    cursor: pointer;
+}
+
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+.image-container .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    color: #FFF;
+}
+.image-container:hover .after {
+    display: block;
+    background: rgba(0, 0, 0, .6);
+}
+
+.centerbox {
+    left: 25%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+}
+.profileimage{
+	max-width: 255px; max-height: 255px;
+}
+.nsidep-body {
+                    
+    
+}
+.nsidep-body a {
+    color: #c9302c;  
+}
+.ui-timepicker-wrapper {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    height: 150px;
+    margin: 0;
+    outline: medium none;
+    overflow-y: auto;
+    width: 7.5em;
+    z-index: 10001;
+}
+
+table.absent_list_dashboard tr th{
+    padding-right: 0;
+}
+table.absent_list_dashboard tr td{
+    padding-right: 0;
+}
+
+
+select.theory_list {
+    width: 141px !important;
+    float: right;
+    margin-right: 10px;
+}
+
+a.lvl_edit {
+    padding-left: 10px;
+}
+
+p.year {
+    text-align: center;
+    border: 1px solid rgb(195, 193, 193);
+    padding: 39px;
+    border-radius: 4px;
+}
+
+.half-left {
+    width: 33%;
+    float: left;
+}
+/*text[text-anchor="middle"]{
+  color:white;
+}*/
+text[text-anchor="middle"] tspan {
+    /*display: none;*/
+    visibility: hidden;
+    opacity: 0;
+}
+.panel-heading h4 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.attendance_title, .attendance_info {
+    width: 33.33%;
+    float: left;
+}
+.attendance_excuse, .excuse_info, .student-class-title {
+    width: 50%;
+    float: left;
+}
+.current-course {
+    height: 100px;
+}
+.attendance {
+    border-bottom: 1px solid rgb(224, 223, 223);
+    padding-bottom: 0;
+}
+.attendance:last-child {
+    border-bottom: none;
+}
+
+.student-id {
+    float: right;
+    max-width: 300px;
+    text-align: center;
+}
+.student_info h3 {
+    margin-top: 10px;
+}
+
+.class_list {
+    margin-top: 10px;
+}
+#class-list-details {
+    background: rgba(232, 29, 29, 0.8);
+    color: white;
+}
+#class-list-details th, #class-list-details td {
+    padding: 5px;
+}
+#class-list-details thead {
+    background: black;
+    color: white;
+}
+.attendance_info_list tr td:last-child {
+    width: 40%;
+}
+
+.idtext > h3 {
+    font-size: 38px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+p.student-name {
+    font-size: 20px;
+}
+.student-picture {
+    width: 250px;
+}
+.student-picture img {
+    max-width: 225px;
+}
+/*.student-other-info {
+    max-width: 240px;
+}*/
+#student-phone, #student-email {
+    cursor: pointer;
+    
+    font-size: 22px;
+    color: #74c767;
+}
+.tooltip {
+    border:none;
+    font-size: 16px;
+    background: none;
+}
+.tooltip-inner  {
+    background: #74c767;
+}
+.tooltip.top .tooltip-arrow {
+    /*color: #74c767;*/
+    border-top-color: #74c767 !important;
+    /*display: none;*/
+}
+#exame-result-list {
+    margin-top: 30px;
+}
+
+#student_exm_result tr {
+    margin: 5px;
+}
+
+.notify-email {
+    
+}
+
+.alert-red-box {
+    background: none repeat scroll 0 0 #d9534f;
+    border: medium none #d9534f;
+    color: #fff;
+}
+
+.alert-green-box {
+    background: none repeat scroll 0 0 #00A802;
+    border: medium none #00A802;
+    color: #fff;
+}
+
+.alert-yellow-box {
+    background: none repeat scroll 0 0 #F7B043;
+    border: medium none #F7B043;
+    color: #fff;
+}
+
+p#show-disability-error, p#show-dec-error  {
+    border: 1px solid red;
+    padding: 3px 8px;
+    color: red;
+    border-radius: 4px;
+    display: none;
+}
+
+/*jquery ui mod*/
+.ui-corner-all{
+	border: 1px solid #333;	
+}
+.ui-autocomplete .ui-corner-all {
+    border:none;
+}
+a.ui-state-focus { background-image: url('/images/j.png') !important; background-color: #212121 !important; color: #fff !important; border: 1px solid #fff !important;}
+#JournalTable tfoot{ border-bottom: 2px solid #666; }
+
+@media (min-width: 992px) {
+#page-wrapper { min-height:768px; }
+ 
+}
+@media (max-width: 767px) {
+ .no-pad-sm-right{ padding-right:15px; } 	
+ .no-pad-sm{ padding-left:15px; padding-right:15px; } 	
+ .no-pad-sm-left{ padding-left:15px; } 	
+}
+@media (min-width : 768px) and (max-width : 991px) {
+    .student-id {
+        float: none; 
+        max-width: 100%; 
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
+}
+
+@media (min-width : 640px) and (max-width : 767px) {
+    .student-id {
+        float: none; 
+        max-width: 100%; 
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
+}
+
+@media (min-width : 481px) and (max-width : 639px) {
+    .student-id {
+        float: none; 
+        max-width: 100%; 
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
+    .student-picture {
+        width: 241px;
+    }
+    .student-picture img {
+        max-width: 215px;
+    }
+}
+
+@media (min-width : 320px) and (max-width : 480px) {
+    .student-id {
+        float: none; 
+        max-width: 100%; 
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
+    .student-picture {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .student-picture img {
+        max-width: 80%;
+    }
+    .student-other-info {
+        padding-left: 20px;
+    }
+}
+.tooltip.in {
+    opacity: 1;
+}
+.tooltip-arrow {
+    display: none;
+}
+.tooltip-inner {
+    max-width: 500px;
+}
